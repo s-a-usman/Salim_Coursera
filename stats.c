@@ -48,28 +48,66 @@
  }
 
  void print_statistics(int test[]){
-
+   printf("\nMean : %d\n",mean);
+   printf("Median : %d\n",median);
+   printf("Max : %d\n",maximum);
+   printf("Min : %d\n",minimum);
  }
 
  void print_array(int test[],int n){
-
+   int i;
+   printf("Array : ");
+   for(i=0;i<SIZE;i++){
+     printf("%d ", test[i]);
+   }
  }
 
  void find_median(int test[],int *median){
-
+   *median = test[SIZE/2];
+ }
+ void find_mean(int test[],int *mean){
+   int i,sum = 0;
+   for(i=0;i<SIZE;i++){
+     sum +=test[i];
+   }
+   *mean = sum/SIZE;
  }
 
  void find_maximum(int test[],int *maximum){
-
+   int i;
+   *maximum = test[0];
+   for(i=1;i<SIZE;i++){
+     if(test[i]>*maximum){
+       *maximum = test[i];
+     }
+   }
  }
 
  void find_minimum(int test[],int *minimum){
-
+   int i;
+   *minimum = test[0];
+   for(i=1;i<SIZE;i++){
+     if(test[i]<*minimum){
+       *minimum = test[i];
+     }
+   }
  }
 
  void sort_array(int test[]){
-
+   int i,j,a;
+   for(i=0;i<SIZE;i++){
+     for(j=i+1;j<SIZE;j++){
+       if(test[i]>test[j]){
+         a = test[i];
+         test[i]=test[j];
+         test[j]=a;
+       }
+     }
+   }
+   printf("\nSorted array : ");
+  for(i=0;i<SIZE;i++){
+    printf("%d ",test[i]);
+  }
  }
-
 
 /* Add other Implementation File Code Here */
